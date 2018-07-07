@@ -11,16 +11,16 @@ function setDate() {
 	if (secondsInDegrees === 90) {
 		SECOND_HAND.style.transition = 'all 0.00s'
 	}
-
 	SECOND_HAND.style.transform = `rotate(${secondsInDegrees}deg)`;
 
 	let minutes = now.getMinutes();
 	let minutesInDegrees = ((minutes / 60) * 360) + 90;
 	MIN_HAND.style.transform = `rotate(${minutesInDegrees}deg)`;
 
-	let hours = now.getHours();
-	let hoursInDegrees = ((hours / 60) * 360) + 80;
-	HOUR_HAND.style.transform = `rotate(${hoursInDegrees}deg)`;
+	let hour = now.getHours();
+	let hourInDegrees = ((hour / 12) * 360) + 90;
+	HOUR_HAND.style.transform = `rotate(${hourInDegrees}deg)`;
+
 
 }
 
